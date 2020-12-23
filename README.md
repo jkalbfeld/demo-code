@@ -6,4 +6,8 @@ immediately to my phone
 ctbackup.sh - a script for backing up Linux containers to a remote host using 
 ZFS
 
+bootstrap.sh - a script that i wrote for connecting to a puppet server
+
+thoughtwave.dot - this is my network infrastructure diagram for thoughtwave.  
+it can be viewed with graphviz.
 

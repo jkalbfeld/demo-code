@@ -1,0 +1,174 @@
+digraph thoughtwave{ 
+ rankdir="LR"
+ labelloc="t"
+
+ ranksep="0.4"
+
+ pad="1,1.5"
+ bgcolor="skyblue"
+ label="ThoughtWave Technologies, Inc.";
+
+ lax [ label="LAX Edge Router", style=filled, fontsize=42, fontcolor=white, color=blue, shape=oval ];
+ mia [ label="MIA Edge Router", style=filled, fontsize=42, fontcolor=white, color=blue, shape=oval ];
+ sjc [ label="SJC Edge Router", style=filled, fontsize=42, fontcolor=white, color=blue, shape=oval ];
+ eur [ label="EUR Edge Router", style=filled, fontsize=42, fontcolor=white, color=blue, shape=oval ];
+ asia [ label="Asia Edge Router", style=filled, fontsize=42, fontcolor=white, color=blue, shape=oval ];
+ as6939 [ label="AS6939", style=filled, fontsize=42, fontcolor=white, color=darkgreen, shape=oval ];
+ as54380 [ label="AS54380", style=filled, fontsize=128, fontcolor=blue, color=skyblue, shape=box ];
+ as17139 [ label="AS17139", style=filled, fontsize=42, fontcolor=white, color=darkgreen, shape=oval ];
+ 
+
+ lax -> as6939 [ color = "red" ];
+ eur -> as6939 [ color = "red" ];
+ asia -> as6939 [ color = "red" ];
+ lax -> as17139 [ color = "blue" ];
+ lax_mothership -> as17139 [ color = "purple" ];
+ lax_electron -> as17139 [ color = "blue" ];
+ customeraccess -> lax_mothership;
+ customeraccess -> lax_electron;
+
+ mia -> as6939 [ color = "red" ];
+ sjc -> as6939 [ color = "red" ];
+
+ lax_infrastructure [ label="199.33.244.0/24", style=filled, fontsize=42, fontcolor=purple, shape=oval ];
+ lax_v6infrastructure [ label="2607:6100::/48", style=filled, fontsize=42, fontcolor=purple, shape=oval ];
+ lax_customers1 [ label="199.79.202.0/24", style=filled, fontsize=42, fontcolor=purple, shape=oval ];
+ lax_customers2 [ label="199.188.96.0/22", style=filled, fontsize=42, fontcolor=purple, shape=oval ];
+
+ lax_infrastructure -> lax;
+ lax_customers1 -> lax;
+ lax_customers2 -> lax;
+ lax_v6infrastructure -> lax;
+
+ mia_v6infrastructure [ label="2607:6100:321::/48", style=filled, fontsize=42, fontcolor=purple, shape=oval ];
+ sjc_v6infrastructure [ label="2607:6100:408::/48", style=filled, fontsize=42, fontcolor=purple, shape=oval ];
+ eur_v6infrastructure [ label="2607:6100:e00::/48", style=filled, fontsize=42, fontcolor=purple, shape=oval ];
+ asia_v6infrastructure [ label="2607:6100:888::/48", style=filled, fontsize=42, fontcolor=purple, shape=oval ];
+
+
+ mia_v6infrastructure -> mia;
+ sjc_v6infrastructure -> sjc;
+ eur_v6infrastructure -> eur;
+ asia_v6infrastructure -> asia;
+
+ lax_mothership [ label="KVM/IP", style=filled, fontsize=42, fontcolor=black, color=yellow, shape=oval ];
+ lax_electron [ label="RPG", style=filled, fontsize=42, fontcolor=black, color=yellow, shape=oval ];
+ lax_plymouth [ label="plymouth NAS", style=filled, fontsize=42, fontcolor=black, color=yellow, shape=oval ];
+ lax_jupiter [ label="jupiter", style=filled, fontsize=42, fontcolor=black, color=yellow, shape=oval ];
+ lax_phobos [ label="phobos", style=filled, fontsize=42, fontcolor=black, color=yellow, shape=oval ];
+ lax_vpn [ label="VPN Core Router", style=filled, fontsize=42, fontcolor=white, color=red, shape=oval ];
+ lax_srs [ label="Sun Ray Server", style=filled, fontsize=42, fontcolor=white, color=red, shape=oval ];
+ lax_openvz [ label="OpenVZ Containers", style=filled, fontsize=42, fontcolor=white, color=orange, shape=oval ];
+ lax_vpn -> lax_tonopah;
+ lax_srs -> lax_tonopah;
+ lax_openvz -> lax_tonopah;
+ lax_vpn -> lax_dreamland;
+ lax_srs -> lax_dreamland;
+ lax_openvz -> lax_dreamland;
+ lax_jupiter -> lax_customers1;
+ lax_phobos -> lax_customers1;
+ lax_plymouth -> lax_customers1;
+ lax_dreamland -> lax_customers1;
+ lax_dreamland -> lax_v6infrastructure;
+ lax_tonopah -> lax_customers1;
+ lax_tonopah -> lax_v6infrastructure;
+ lax_gloversville -> lax_infrastructure;
+ lax_gloversville -> lax_v6infrastructure;
+ lax_lakegeorge -> lax_infrastructure;
+ lax_lakegeorge -> lax_v6infrastructure;
+ lax_lakegeorge -> lax_customers1;
+ lax_kvm1 -> lax_customers1;
+ lax_kvm2 -> lax_customers1;
+
+ lax_dreamland [ label="dreamland", style=filled, fontsize=42, fontcolor=black, color=yellow, shape=oval ];
+ lax_tonopah [ label="tonopah", style=filled, fontsize=42, fontcolor=black, color=yellow, shape=oval ];
+ lax_gloversville [ label="gloversville", style=filled, fontsize=42, fontcolor=black, color=yellow, shape=oval ];
+ lax_lakegeorge [ label="lakegeorge NAS", style=filled, fontsize=42, fontcolor=black, color=yellow, shape=oval ];
+ lax_kvm1 [ label="kvm1", style=filled, fontsize=42, fontcolor=black, color=yellow, shape=oval ];
+ lax_kvm2 [ label="kvm2", style=filled, fontsize=42, fontcolor=black, color=yellow, shape=oval ];
+ mia_kvm127 [ label="kvm127", style=filled, fontsize=42, fontcolor=black, color=yellow, shape=oval ];
+ mia_vm128 [ label="vm128", style=filled, fontsize=42, fontcolor=white, color=red, shape=oval ];
+ mia_doze [ label="Windows XP", style=filled, fontsize=42, fontcolor=white, color=red, shape=oval ];
+ mia_vm135 [ label="vm135", style=filled, fontsize=42, fontcolor=white, color=red, shape=oval ];
+ mia_vm139 [ label="vm139", style=filled, fontsize=42, fontcolor=white, color=red, shape=oval ];
+ mia_wormhole [ label="wormhole", style=filled, fontsize=42, fontcolor=black, color=yellow, shape=oval ];
+
+ voiceservices [ label="CoreV6 VOIP", style=filled, fontsize=42, fontcolor=white, color=purple, shape=oval ];
+ sparczones [ label="SPARC Zones", style=filled, fontsize=42, fontcolor=white, color=purple, shape=oval ];
+ sparcldoms [ label="SPARC LDOMs", style=filled, fontsize=42, fontcolor=white, color=purple, shape=oval ];
+ legacyvoice [ label="Legacy VOIP", style=filled, fontsize=42, fontcolor=white, color=purple, shape=oval ];
+ customeraccess [ label="Customer Access", style=filled, fontsize=42, fontcolor=white, color=purple, shape=oval ];
+ customervms [ label="Customer VMs", style=filled, fontsize=42, fontcolor=white, color=purple, shape=oval ];
+ customeropenvz [ label="Customer OpenVZ", style=filled, fontsize=42, fontcolor=white, color=purple, shape=oval ];
+ webhosting [ label="Web Hosting", style=filled, fontsize=42, fontcolor=white, color=purple, shape=oval ];
+ homeoffice [ label="Home Office", style=filled, fontsize=42, fontcolor=black, color=cyan, shape=oval ];
+ customertunnels [ label="Customer IP Tunnels", style=filled, fontsize=42, fontcolor=white, color=purple, shape=oval ];
+ infrastructure [ label="Infrastructure", style=filled, fontsize=42, fontcolor=white, color=purple, shape=oval ];
+
+ mailcorp [ label="mail", style=filled, fontsize=42, fontcolor=black, color=green, shape=oval ];
+ ns1sfo [ label="ns1.sfo", style=filled, fontsize=42, fontcolor=black, color=green, shape=oval ];
+ ns2sfo [ label="ns2.sfo", style=filled, fontsize=42, fontcolor=black, color=green, shape=oval ];
+ ns1corp [ label="ns1.corp", style=filled, fontsize=42, fontcolor=black, color=green, shape=oval ];
+ ns2corp [ label="ns2.corp", style=filled, fontsize=42, fontcolor=black, color=green, shape=oval ];
+ cdn [ label="Content", style=filled, fontsize=42, fontcolor=black, color=green, shape=oval ];
+ ftp [ label="FTP", style=filled, fontsize=42, fontcolor=black, color=green, shape=oval ];
+ www [ label="WWW", style=filled, fontsize=42, fontcolor=black, color=green, shape=oval ];
+ switch [ label="PBX", style=filled, fontsize=42, fontcolor=black, color=green, shape=oval ];
+ monitoring [ label="Nagios", style=filled, fontsize=42, fontcolor=black, color=green, shape=oval ];
+ authdb [ label="CoreV6 LDAP", style=filled, fontsize=42, fontcolor=black, color=green, shape=oval ];
+ jplworkpc [ label="JPL Work PC", style=filled, fontsize=42, fontcolor=black, color=green, shape=oval ];
+
+ infrastructure -> mailcorp;
+ infrastructure -> www;
+ infrastructure -> ns1sfo;
+ infrastructure -> ns2sfo;
+ infrastructure -> ns1corp;
+ infrastructure -> ns2corp;
+ infrastructure -> ftp;
+ infrastructure -> cdn;
+ infrastructure -> monitoring;
+ infrastructure -> authdb;
+
+ ns1sfo -> lax_openvz;
+ ns2sfo -> lax;
+ cdn -> lax_openvz;
+ ftp -> lax_openvz;
+ authdb -> lax_openvz;
+ jplworkpc -> lax_gloversville;
+ ns1corp -> lax_gloversville;
+ mailcorp -> lax_gloversville;
+ www -> lax_gloversville;
+ switch -> lax_gloversville;
+ monitoring -> lax_gloversville;
+ ns2corp -> lax_srs;
+
+  sparczones -> lax_jupiter;
+  sparcldoms -> lax_phobos;
+
+  mia_kvm127 -> mia;
+  mia_vm128 -> mia_kvm127;
+  mia_vm135 -> mia_kvm127;
+  mia_vm139 -> mia_kvm127;
+  mia_wormhole -> mia;
+  mia_doze -> mia_kvm127;
+  voiceservices -> lax;
+  voiceservices -> mia;
+  voiceservices -> sjc;
+  voiceservices -> eur;
+  voiceservices -> asia;
+
+  legacyvoice -> switch;
+  webhosting -> lax_openvz;
+ 
+  homeoffice -> lax_vpn;
+  homeoffice -> legacyvoice;
+  homeoffice -> lax_srs;
+  customertunnels -> lax_vpn;
+
+  customervms -> lax_kvm1;
+  customeropenvz -> lax_kvm1;
+  customervms -> lax_kvm2;
+  customeropenvz -> lax_kvm2;
+  customervms -> mia_kvm127;
+
+}
