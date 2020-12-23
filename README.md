@@ -17,3 +17,6 @@ bash script.  It's not the greatest, but it works.
 
 1.sh, 2.sh, 3.sh, 4.sh - I put together this 4-part system for setting up
 a postfix Linux email server
+
+main.tf, vm_linux.tf - These are parts of a terraform module I wrote for 
+deploying a Linux VM
