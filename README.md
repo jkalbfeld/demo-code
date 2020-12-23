@@ -11,3 +11,9 @@ bootstrap.sh - a script that i wrote for connecting to a puppet server
 thoughtwave.dot - this is my network infrastructure diagram for thoughtwave.  
 it can be viewed with graphviz.
 
+jitsi.sh - I took all of the steps for setting up jitsi and put it into this
+bash script.  It's not the greatest, but it works.
+
+
+1.sh, 2.sh, 3.sh, 4.sh - I put together this 4-part system for setting up
+a postfix Linux email server
